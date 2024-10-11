@@ -1,0 +1,36 @@
+apiVersion: ecs.aws.upbound.io/v1beta1
+kind: TaskDefinition
+metadata:
+  annotations:
+    meta.upbound.io/example-id: ecs/v1beta1/service-static-cluster
+  labels:
+    testing.upbound.io/example-name: crossplane-blanketops-ecs-taskdefinition
+  name: crossplane-blanketops-ecs-taskdefinition
+spec:
+  forProvider:
+    containerDefinitions: |-
+      [
+        {
+          "name": "crossplane-blanketops-ecr-nginx",
+          "image": "686255954747.dkr.ecr.eu-north-1.amazonaws.com/crossplane-blanketops-ecr-repository:latest",
+          "cpu": 12,
+          "memory": 512,
+          "essential":true
+        },
+         {
+          "name": "crossplane-blanketops-ecr-nginx",
+          "image": "686255954747.dkr.ecr.eu-north-1.amazonaws.com/crossplane-blanketops-ecr-repository:latest",
+          "cpu": 12,
+          "memory": 512,
+          "essential":true
+        },
+         {
+          "name": "crossplane-blanketops-ecr-nginx",
+          "image": "686255954747.dkr.ecr.eu-north-1.amazonaws.com/crossplane-blanketops-ecr-repository:latest",
+          "cpu": 12,
+          "memory": 512,
+          "essential":true
+        },
+      ]
+    family: crossplane-blanketops-ecs-cluster-service
+    region: eu-north-1

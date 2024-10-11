@@ -1,0 +1,18 @@
+apiVersion: helm.crossplane.io/v1beta1
+kind: ProviderConfig
+metadata:
+  name: helm-provider
+spec:
+  credentials:
+    secretRef:
+      key: kubeconfig
+      name: cluster-config
+      namespace: crossplane-system
+    source: Secret
+  identity:
+    secretRef:
+      key: token
+      name: upbound-credentials
+      namespace: crossplane-system
+    source: Secret
+    type: UpboundTokens

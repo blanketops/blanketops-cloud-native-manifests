@@ -1,0 +1,9 @@
+apiVersion: ecs.aws.upbound.io/v1beta1
+kind: AccountSettingDefault
+metadata:
+  name: crossplane-blanketops-ecs-account
+spec:
+  forProvider:
+    name: taskLongArnFormat
+    region: eu-north-1
+    value: enabled

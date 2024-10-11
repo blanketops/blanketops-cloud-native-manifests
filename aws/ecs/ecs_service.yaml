@@ -1,0 +1,17 @@
+apiVersion: ecs.aws.upbound.io/v1beta1
+kind: Service
+metadata:
+  annotations:
+    meta.upbound.io/example-id: ecs/v1beta1/service
+  name: crossplane-blanketops-ecs-cluster-service
+spec:
+  forProvider:
+    clusterSelector:
+      matchLabels:
+        testing.upbound.io/example-name: crossplane-blanketops-ecs-cluster
+    launchType: EC2
+    propagateTags: TASK_DEFINITION
+    region: eu-north-1
+    taskDefinitionSelector:
+      matchLabels:
+        testing.upbound.io/example-name: crossplane-blanketops-ecs-service-definition

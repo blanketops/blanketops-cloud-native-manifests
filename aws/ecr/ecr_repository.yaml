@@ -1,0 +1,8 @@
+apiVersion: ecr.aws.upbound.io/v1beta1
+kind: Repository
+metadata:
+  name: crossplane-blanketops-ecr-repository
+spec:
+  forProvider:
+    imageTagMutability: MUTABLE
+    region: eu-north-1

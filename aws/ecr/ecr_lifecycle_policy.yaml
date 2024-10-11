@@ -1,0 +1,28 @@
+apiVersion: ecr.aws.upbound.io/v1beta1
+kind: LifecyclePolicy
+metadata:
+  name: crossplane-blanketops-ecr-lifecycle-policy
+spec:
+  forProvider:
+    policy: |
+      {
+          "rules": [
+              {
+                  "rulePriority": 1,
+                  "description": "Expire images older than 14 days",
+                  "selection": {
+                      "tagStatus": "untagged",
+                      "countType": "sinceImagePushed",
+                      "countUnit": "days",
+                      "countNumber": 14
+                  },
+                  "action": {
+                      "type": "expire"
+                  }
+              }
+          ]
+      }
+    region: eu-north-1
+    repository: crossplane-blanketops-ecr-repository
+  providerConfigRef:
+    name: default

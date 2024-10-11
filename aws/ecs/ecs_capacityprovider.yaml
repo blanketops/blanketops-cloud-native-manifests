@@ -1,0 +1,21 @@
+apiVersion: ecs.aws.upbound.io/v1beta1
+kind: CapacityProvider
+metadata:
+  annotations:
+    meta.upbound.io/example-id: ecs/v1beta1/capacityprovider
+  labels:
+    testing.upbound.io/example-name: crossplane-blanketops-ecs-capacity-provider
+  name: crossplane-blanketops-ecs-capacity-provider
+spec:
+  forProvider:
+    autoScalingGroupProvider:
+    - autoScalingGroupArnSelector:
+        matchLabels:
+          testing.upbound.io/example-name: crossplane-blanketops-ecs-capacity-provider
+      managedScaling:
+      - maximumScalingStepSize: 1000
+        minimumScalingStepSize: 1
+        status: ENABLED
+        targetCapacity: 10
+      managedTerminationProtection: DISABLED
+    region: eu-north-1

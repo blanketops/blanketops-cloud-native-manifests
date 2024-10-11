@@ -1,0 +1,15 @@
+apiVersion: ecr.aws.upbound.io/v1beta1
+kind: RegistryScanningConfiguration
+metadata:
+  name: crossplane-registry-scanning-configuration
+spec:
+  forProvider:
+    region: eu-north-1
+    rule:
+    - repositoryFilter:
+      - filter: crossplane-registry-scanning-configuration
+        filterType: WILDCARD
+      scanFrequency: CONTINUOUS_SCAN
+    scanType: ENHANCED
+  providerConfigRef:
+    name: default

@@ -1,0 +1,14 @@
+apiVersion: ecr.aws.upbound.io/v1beta1
+kind: ReplicationConfiguration
+metadata:
+  name: crossplane-blanketops-ecr-replication-configuration
+spec:
+  forProvider:
+    region: eu-north-1
+    replicationConfiguration:
+    - rule:
+      - destination:
+        - region: eu-north-1
+          registryId: ${aws_account_id}
+  providerConfigRef:
+    name: default

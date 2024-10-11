@@ -1,0 +1,29 @@
+apiVersion: ecr.aws.upbound.io/v1beta1
+kind: RegistryPolicy
+metadata:
+  name: crossplane-blanketops-ecr-registry-policy
+spec:
+  forProvider:
+    policy: >-
+      {
+          "Version":"2012-10-17",
+          "Statement":[
+              {
+                  "Sid":"ReplicationAccessCrossAccount",
+                  "Effect":"Allow",
+                  "Principal":{
+                      "AWS":"arn:aws:iam::${data.aws_account_id}:root"
+                  },
+                  "Action":[
+                      "ecr:CreateRepository",
+                      "ecr:ReplicateImage"
+                  ],
+                  "Resource": [
+                      "arn:aws:ecr:eu-north-1:${data.aws_account_id}:repository/*"
+                  ]
+              }
+          ]
+      }
+    region: eu-north-1
+  providerConfigRef:
+    name: default
