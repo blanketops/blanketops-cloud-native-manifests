@@ -1,1 +1,3 @@
-.vscode
+*.vscode
+*txt
+*aws_secret.yaml
