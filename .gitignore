@@ -1,3 +1,5 @@
 *.vscode
 *txt
 *aws_secret.yaml
+helm/
+argo/
