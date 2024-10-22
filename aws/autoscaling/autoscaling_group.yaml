@@ -1,0 +1,22 @@
+apiVersion: autoscaling.aws.upbound.io/v1beta2
+kind: AutoscalingGroup
+metadata:
+  annotations:
+    meta.upbound.io/example-id: autoscaling/v1beta1/autoscalinggroup
+  labels:
+    testing.upbound.io/example-name: example
+  name: example
+spec:
+  forProvider:
+    availabilityZones:
+    - eu-north-1b
+    launchConfigurationSelector:
+      matchLabels:
+        testing.upbound.io/example-name: autoscalinggroup-example
+    maxSize: 1
+    minSize: 1
+    region: eu-north-1
+    tag:
+    - key: AmazonECSManaged
+      propagateAtLaunch: true
+      value: "true"

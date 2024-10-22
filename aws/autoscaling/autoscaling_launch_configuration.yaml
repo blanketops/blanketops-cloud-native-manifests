@@ -1,0 +1,13 @@
+apiVersion: autoscaling.aws.upbound.io/v1beta1
+kind: LaunchConfiguration
+metadata:
+  annotations:
+    meta.upbound.io/example-id: autoscaling/v1beta1/autoscalinggroup
+  labels:
+    testing.upbound.io/example-name: autoscalinggroup-example
+  name: autoscalinggroup-example
+spec:
+  forProvider:
+    imageId: ami-0454207e5367abf01
+    instanceType: t2.micro
+    region: eu-north-1

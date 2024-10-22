@@ -1,0 +1,16 @@
+apiVersion: autoscaling.aws.upbound.io/v1beta1
+kind: GroupTag
+metadata:
+  annotations:
+    meta.upbound.io/example-id: autoscaling/v1beta1/grouptag
+  labels:
+    testing.upbound.io/example-name: example
+  name: example
+spec:
+  forProvider:
+    autoscalingGroupName: example
+    region: us-west-1
+    tag:
+    - key: k8s.io/cluster-autoscaler/node-template/label/eks.amazonaws.com/capacityType
+      propagateAtLaunch: false
+      value: SPOT
