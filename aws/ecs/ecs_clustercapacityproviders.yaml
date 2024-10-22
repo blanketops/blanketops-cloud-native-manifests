@@ -7,12 +7,15 @@ metadata:
 spec:
   forProvider:
     capacityProviders:
-    - FARGATE
+    - EC2
     clusterNameSelector:
       matchLabels:
         testing.upbound.io/example-name: crossplane-blanketops-ecs-cluster
     defaultCapacityProviderStrategy:
     - base: 1
-      capacityProvider: FARGATE
+      capacityProvider: EC2
       weight: 100
     region: eu-north-1
+
+
+
