@@ -16,7 +16,7 @@ spec:
     - autoscaling:EC2_INSTANCE_TERMINATE
     - autoscaling:EC2_INSTANCE_LAUNCH_ERROR
     - autoscaling:EC2_INSTANCE_TERMINATE_ERROR
-    region: us-west-1
+    region: eu-north-1
     topicArnSelector:
       matchLabels:
         testing.upbound.io/example-name: blanketopsautoscaling

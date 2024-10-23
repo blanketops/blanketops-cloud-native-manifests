@@ -1,0 +1,29 @@
+apiVersion: ec2.aws.upbound.io/v1beta1
+kind: NetworkInterface
+metadata:
+  labels:
+    testing.upbound.io/example-name: test2
+  name: blanketops-ecs-network-interface
+spec:
+  forProvider:
+    region: eu-north-1
+    subnetIdSelector:
+      matchLabels:
+        testing.upbound.io/example-name: crossplane-blanketops-ec2-instance
+# apiVersion: ec2.aws.upbound.io/v1beta1
+# kind: NetworkInterface
+# metadata:
+#   annotations:
+#     meta.upbound.io/example-id: ec2/v1beta2/instance
+#   labels:
+#     testing.upbound.io/example-name: sample-instance
+#   name: sample-instance
+# spec:
+#   forProvider:
+#     privateIps:
+#     - 172.16.10.100
+#     region: us-west-1
+#     subnetIdSelector:
+#       matchLabels:
+#         testing.upbound.io/example-name: sample-instance
+---
