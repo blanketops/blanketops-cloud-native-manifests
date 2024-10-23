@@ -4,8 +4,8 @@ metadata:
   annotations:
     meta.upbound.io/example-id: autoscaling/v1beta1/lifecyclehook
   labels:
-    testing.upbound.io/example-name: example
-  name: example
+    testing.upbound.io/example-name: blanketopsautoscaling
+  name: blanketops-autoscaling-lifecyclehook
 spec:
   forProvider:
     autoscalingGroupNameSelector:

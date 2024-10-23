@@ -4,8 +4,8 @@ metadata:
   annotations:
     meta.upbound.io/example-id: autoscaling/v1beta1/notification
   labels:
-    testing.upbound.io/example-name: example_notifications
-  name: example-notifications
+    testing.upbound.io/example-name: blanketopsautoscaling
+  name: blanketops-autoscaling-notification
 spec:
   forProvider:
     groupNames:
@@ -19,4 +19,4 @@ spec:
     region: us-west-1
     topicArnSelector:
       matchLabels:
-        testing.upbound.io/example-name: example
+        testing.upbound.io/example-name: blanketopsautoscaling

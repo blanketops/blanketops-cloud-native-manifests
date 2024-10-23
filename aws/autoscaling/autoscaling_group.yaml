@@ -4,15 +4,15 @@ metadata:
   annotations:
     meta.upbound.io/example-id: autoscaling/v1beta1/autoscalinggroup
   labels:
-    testing.upbound.io/example-name: example
-  name: example
+    testing.upbound.io/example-name: blanketopsautoscaling
+  name: blanketops-autoscaling-group
 spec:
   forProvider:
     availabilityZones:
     - eu-north-1b
     launchConfigurationSelector:
       matchLabels:
-        testing.upbound.io/example-name: autoscalinggroup-example
+        testing.upbound.io/example-name: blanketopsautoscaling
     maxSize: 1
     minSize: 1
     region: eu-north-1

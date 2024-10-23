@@ -4,7 +4,7 @@ metadata:
   annotations:
     meta.upbound.io/example-id: autoscaling/v1beta2/attachment
   labels:
-    testing.upbound.io/example-name: example
+    testing.upbound.io/example-name: blanketopsautoscaling
   name: asg-attachment-bar
 spec:
   forProvider:
@@ -14,4 +14,4 @@ spec:
     elbSelector:
       matchLabels:
         testing.upbound.io/example-name: bar
-    region: us-west-1
+    region: eu-north-1
