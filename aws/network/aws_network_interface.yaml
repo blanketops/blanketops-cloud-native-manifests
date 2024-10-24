@@ -22,7 +22,7 @@ spec:
 #   forProvider:
 #     privateIps:
 #     - 172.16.10.100
-#     region: us-west-1
+#     region: eu-north-1
 #     subnetIdSelector:
 #       matchLabels:
 #         testing.upbound.io/example-name: sample-instance
