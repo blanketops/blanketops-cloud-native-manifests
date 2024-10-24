@@ -4,8 +4,8 @@ metadata:
   annotations:
     meta.upbound.io/example-id: ec2/v1beta1/defaultvpc
   labels:
-    testing.upbound.io/example-name: default
-  name: default
+    testing.upbound.io/example-name: blanketopsec2
+  name: blanketops-ec2-default-vpc
 spec:
   forProvider:
     region: eu-north-1

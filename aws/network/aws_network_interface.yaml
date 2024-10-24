@@ -2,14 +2,16 @@ apiVersion: ec2.aws.upbound.io/v1beta1
 kind: NetworkInterface
 metadata:
   labels:
-    testing.upbound.io/example-name: test2
+    testing.upbound.io/example-name: blanketopsec2
   name: blanketops-ecs-network-interface
 spec:
   forProvider:
     region: eu-north-1
     subnetIdSelector:
       matchLabels:
-        testing.upbound.io/example-name: crossplane-blanketops-ec2-instance
+        testing.upbound.io/example-name: blanketopsec2
+
+
 # apiVersion: ec2.aws.upbound.io/v1beta1
 # kind: NetworkInterface
 # metadata:

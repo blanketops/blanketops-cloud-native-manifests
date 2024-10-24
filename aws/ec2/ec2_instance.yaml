@@ -2,8 +2,8 @@ apiVersion: ec2.aws.upbound.io/v1beta1
 kind: Instance
 metadata:
   labels:
-    testing.upbound.io/example-name: crossplane-blanketops-ec2-instance
-  name: crossplane-blanketops-ec2-instance
+    testing.upbound.io/example-name: blanketopsec2
+  name: blanketops-ec2-instance
 spec:
   forProvider:
     ami: ami-0d9858aa3c6322f73
@@ -11,5 +11,5 @@ spec:
     networkInterface:
     - deviceIndex: 0
       networkInterfaceIdRef:
-        name: crossplane-blanketops-ec2-instance
+        name: blanketopsec2
     region: eu-north-1
