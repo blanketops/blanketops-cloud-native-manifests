@@ -1,0 +1,14 @@
+apiVersion: ec2.aws.upbound.io/v1beta1
+kind: Subnet
+metadata:
+  labels:
+    testing.upbound.io/example-name: blanketopsec2
+  name: blanketops-network-subnet
+spec:
+  forProvider:
+    availabilityZone: eu-north-1b
+    cidrBlock: 172.31.0.0/16
+    region: eu-north-1
+    vpcIdSelector:
+      matchLabels:
+        testing.upbound.io/example-name: blanketopsec2
